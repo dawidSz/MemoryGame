@@ -16,19 +16,18 @@ using System.Windows.Shapes;
 namespace MemoryGame
 {
     /// <summary>
-    /// Logika interakcji dla klasy MainWindow.xaml
+    /// Logika interakcji dla klasy HighscoresPage.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class HighscoresPage : Page
     {
-        public MainWindow()
+        public HighscoresPage()
         {
             InitializeComponent();
-            Loaded += MyWindow_Loaded;
         }
 
-        private void MyWindow_Loaded(object sender, RoutedEventArgs e)
+        private void highscores_backbutton_Click(object sender, RoutedEventArgs e)
         {
-            mainwindowFrame.NavigationService.Navigate(new MainWindowPage());
+            this.NavigationService.Navigate(new MainWindowPage());
         }
     }
 }
