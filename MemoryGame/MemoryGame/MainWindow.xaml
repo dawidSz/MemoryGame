@@ -7,6 +7,5 @@
         mc:Ignorable="d"
         Height="380" Width="270">
     <Frame x:Name="mainwindowFrame" HorizontalAlignment="Left" Height="350" VerticalAlignment="Top" Width="260"/>
-
-
+    
 </Window>

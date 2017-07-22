@@ -34,5 +34,11 @@ namespace MemoryGame
         {
             this.NavigationService.Navigate(new InfoPage());
         }
+
+        private void playButton_Click(object sender, RoutedEventArgs e)
+        {
+            Gameplay new_game = new Gameplay();
+            new_game.ShowDialog();
+        }
     }
 }
