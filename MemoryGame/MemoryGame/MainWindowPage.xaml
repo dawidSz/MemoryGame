@@ -8,8 +8,8 @@
       d:DesignHeight="380" d:DesignWidth="270">
 
     <Grid>
-        <Image Source="skyFALL.jpg" Stretch="Fill"/>
-        <Button x:Name="playButton" Content="PLAY !" HorizontalAlignment="Left" Margin="41,160,0,0" VerticalAlignment="Top" Width="153" Height="27" RenderTransformOrigin="0.5,0.5">
+        <Image Source="skyFALL.jpg" Stretch="Fill" Margin="0,-21,0,0"/>
+        <Button x:Name="playButton" Content="PLAY !" HorizontalAlignment="Left" Margin="53,158,0,0" VerticalAlignment="Top" Width="153" Height="27" RenderTransformOrigin="0.5,0.5" Click="playButton_Click">
             <Button.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>

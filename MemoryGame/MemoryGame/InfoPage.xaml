@@ -8,7 +8,7 @@
       d:DesignHeight="380" d:DesignWidth="270">
 
     <Grid>
-        <Image Source="skyFALLpages.jpg" Stretch="Fill"/>
+        <Image Source="skyFALLpages.jpg" Stretch="Fill" Margin="0,-21,0,0"/>
         <Button x:Name="highscores_backbutton" Content="Back !" HorizontalAlignment="Left" Margin="170,284,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.5,0.5" Click="highscores_backbutton_Click">
             <Button.RenderTransform>
                 <TransformGroup>
@@ -19,5 +19,6 @@
                 </TransformGroup>
             </Button.RenderTransform>
         </Button>
+        <TextBlock HorizontalAlignment="Left" Height="234" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="241" FontFamily="Times New Roman" Foreground="#FFE8E0E0" FontSize="18" TextAlignment="Center"><Run Text="This "/><Run Text="small game has benn made as a project for Junior's .NET academy on the Gdańśk University of Technology"/><Run Text=". We (David, Jacob, Marcihn) created small app, where You can train ur memory. Just press &quot;PLAY !&quot; and find two matching pictures ! "/><LineBreak/><Run Text="Go on !"/></TextBlock>
     </Grid>
 </Page>
