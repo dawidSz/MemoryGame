@@ -54,7 +54,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="AddNameWindow.xaml">
+    <Page Include="Gameplay.xaml">
+
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -76,6 +77,9 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Gameplay.xaml.cs">
+      <DependentUpon>Gameplay.xaml</DependentUpon>
     </Compile>
     <Compile Include="HighscoresPage.xaml.cs">
       <DependentUpon>HighscoresPage.xaml</DependentUpon>

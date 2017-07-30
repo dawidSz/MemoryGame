@@ -1,0 +1,43 @@
+﻿<Window x:Class="MemoryGame.Gameplay"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MemoryGame"
+        mc:Ignorable="d"
+        Title="Gameplay" Height="500" Width="640">
+    <Border Padding="10">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="200"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Button x:Name="b_00" Grid.Column="0" Grid.Row="0" Margin="5" Background="LightGray" Click="b_00_Click"/>
+            <Button x:Name="b_01" Grid.Column="0" Grid.Row="1" Margin="5" Background="LightGray" Click="b_01_Click"/>
+            <Button x:Name="b_02" Grid.Column="0" Grid.Row="2" Margin="5" Background="LightGray" Click="b_02_Click"/>
+            <Button x:Name="b_03" Grid.Column="0" Grid.Row="3" Margin="5" Background="LightGray" Click="b_03_Click"/>
+            <Button x:Name="b_10" Grid.Column="1" Grid.Row="0" Margin="5" Background="LightGray" Click="b_10_Click"/>
+            <Button x:Name="b_11" Grid.Column="1" Grid.Row="1" Margin="5" Background="LightGray" Click="b_11_Click"/>
+            <Button x:Name="b_12" Grid.Column="1" Grid.Row="2" Margin="5" Background="LightGray" Click="b_12_Click"/>
+            <Button x:Name="b_13" Grid.Column="1" Grid.Row="3" Margin="5" Background="LightGray" Click="b_13_Click"/>
+            <Button x:Name="b_20" Grid.Column="2" Grid.Row="0" Margin="5" Background="LightGray" Click="b_20_Click"/>
+            <Button x:Name="b_21" Grid.Column="2" Grid.Row="1" Margin="5" Background="LightGray" Click="b_21_Click"/>
+            <Button x:Name="b_22" Grid.Column="2" Grid.Row="2" Margin="5" Background="LightGray" Click="b_22_Click"/>
+            <Button x:Name="b_23" Grid.Column="2" Grid.Row="3" Margin="5" Background="LightGray" Click="b_23_Click"/>
+            <Button x:Name="b_30" Grid.Column="3" Grid.Row="0" Margin="5" Background="LightGray" Click="b_30_Click"/>
+            <Button x:Name="b_31" Grid.Column="3" Grid.Row="1" Margin="5" Background="LightGray" Click="b_31_Click"/>
+            <Button x:Name="b_32" Grid.Column="3" Grid.Row="2" Margin="5" Background="LightGray" Click="b_32_Click"/>
+            <Button x:Name="b_33" Grid.Column="3" Grid.Row="3" Margin="5" Background="LightGray" Click="b_33_Click"/>
+            <Label x:Name="TimerLabel" Grid.Column="4" Grid.Row="0" Content="00:00:00" FontSize="25" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        </Grid>
+    </Border>
+</Window>
