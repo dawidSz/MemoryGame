@@ -313,8 +313,14 @@ namespace MemoryGame
                 if(WIN >= 8)
                 {
                     sw.Stop();
-                    dt.Stop();
-                    MessageBoxResult result = MessageBox.Show(time, "YOU WON");
+                    dt.Stop();                  
+                    MessageBoxResult result = MessageBox.Show("Your time is: "+time+"\nDo you want to save your score?",
+                        "YOU WON", MessageBoxButton.YesNo);
+
+                    if (result == MessageBoxResult.Yes)
+                    {
+                        
+                    }
                 }
             }
         }
@@ -341,6 +347,7 @@ namespace MemoryGame
                 keep_uncovered = false;
                 b_00.Background = Change_bg(sender, e, b_xx.b_00);
                 Pick(b_xx.b_00);
+                WIN = 8;
             }
         }   
 
@@ -361,6 +368,7 @@ namespace MemoryGame
                 keep_uncovered = false;
                 b_02.Background = Change_bg(sender, e, b_xx.b_02);
                 Pick(b_xx.b_02);
+                
             }
         }
 
@@ -492,6 +500,17 @@ namespace MemoryGame
                 b_33.Background = Change_bg(sender, e, b_xx.b_33);
                 Pick(b_xx.b_33);
             }
+        }
+        private void b_41_Click(object sender, RoutedEventArgs e)
+        {
+            
+            this.Close();
+            Gameplay new_game = new Gameplay();
+            new_game.ShowDialog();
+        }
+        private void b_42_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }

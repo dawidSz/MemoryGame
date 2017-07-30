@@ -38,6 +38,8 @@
             <Button x:Name="b_32" Grid.Column="3" Grid.Row="2" Margin="5" Background="LightGray" Click="b_32_Click"/>
             <Button x:Name="b_33" Grid.Column="3" Grid.Row="3" Margin="5" Background="LightGray" Click="b_33_Click"/>
             <Label x:Name="TimerLabel" Grid.Column="4" Grid.Row="0" Content="00:00:00" FontSize="25" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+            <Button x:Name="b_41" Margin="40,5,40,72" Grid.Column="4" Grid.Row="1" Content="Reset Game" Click="b_41_Click"/>
+            <Button Margin="40,58,40,19" Grid.Column="4" Grid.Row="1" Content="Close Game" Click="b_42_Click"/>
         </Grid>
     </Border>
 </Window>
