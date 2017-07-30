@@ -37,6 +37,7 @@ namespace MemoryGame
 
         private void playButton_Click(object sender, RoutedEventArgs e)
         {
+
             Gameplay new_game = new Gameplay();
             new_game.ShowDialog();
         }

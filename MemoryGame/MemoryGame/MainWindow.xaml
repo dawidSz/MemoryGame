@@ -5,7 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MemoryGame"
         mc:Ignorable="d"
-        Height="380" Width="270">
-    <Frame x:Name="mainwindowFrame" HorizontalAlignment="Left" Height="350" VerticalAlignment="Top" Width="260"/>
     
+
+        Height="380" Width="275" Icon="APPicon.ico">
+    
+        <Frame x:Name="mainwindowFrame" HorizontalAlignment="Left" Height="350" VerticalAlignment="Top" Width="270"/>
+  
 </Window>
