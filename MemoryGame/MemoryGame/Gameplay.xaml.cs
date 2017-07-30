@@ -27,6 +27,7 @@ namespace MemoryGame
 
         string time = string.Empty;
         int WIN = 0;
+        string name = string.Empty;
 
         bool first_pick = false;
         bool second_pick = false;
@@ -301,6 +302,7 @@ namespace MemoryGame
             if (first_pick && second_pick) Check_Pair();
         }
 
+       
         private void Check_Pair() // simple version
         {
             first_pick = false;
@@ -313,14 +315,18 @@ namespace MemoryGame
                 if(WIN >= 8)
                 {
                     sw.Stop();
-                    dt.Stop();                  
-                    MessageBoxResult result = MessageBox.Show("Your time is: "+time+"\nDo you want to save your score?",
-                        "YOU WON", MessageBoxButton.YesNo);
+                    dt.Stop();
+                    //MessageBoxResult result = MessageBox.Show("Your time is: "+time+"\nDo you want to save your score?",
+                    //    "YOU WON", MessageBoxButton.YesNo);
 
-                    if (result == MessageBoxResult.Yes)
-                    {
-                        
-                    }
+                    //if (result == MessageBoxResult.Yes)
+                    //{
+
+                    //}
+                    WinningInformation.Content = "Congratulations!\nYou won the game!" +
+                        "\nEnter your nickname,\nif you want to save your score!";
+                    Nickname.Visibility = Visibility.Visible;
+                    Save.Visibility = Visibility.Visible;
                 }
             }
         }
@@ -347,7 +353,6 @@ namespace MemoryGame
                 keep_uncovered = false;
                 b_00.Background = Change_bg(sender, e, b_xx.b_00);
                 Pick(b_xx.b_00);
-                WIN = 8;
             }
         }   
 
@@ -511,6 +516,10 @@ namespace MemoryGame
         private void b_42_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
+        }
+        private void Save_click(object sender, RoutedEventArgs e)
+        {
+            name = Nickname.Text;
         }
     }
 }
