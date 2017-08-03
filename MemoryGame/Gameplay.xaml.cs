@@ -39,7 +39,6 @@ namespace MemoryGame
         int t_pick;
 
         bool keep_uncovered = false;
-        bool start_game = true;
         int hold_covered = 0;
 
         // numbering every button, there are 16 of them
@@ -70,6 +69,8 @@ namespace MemoryGame
             }
             dt.Tick += new EventHandler(dt_Tick);
             dt.Interval = new TimeSpan(0, 0, 0, 0, 1);
+            sw.Start();
+            dt.Start();
         }
 
         private void dt_Tick(object sender, EventArgs e)
@@ -345,19 +346,11 @@ namespace MemoryGame
             }
         }
 
-        private void Start()
-        {
-            sw.Start();
-            dt.Start();
-            start_game = false;
-        }
-
 #region Click_methods
         private void b_00_Click(object sender, RoutedEventArgs e)
         {
             if (b_00.Background == Brushes.LightGray)
             {
-                if (start_game) Start();
                 keep_uncovered = false;
                 b_00.Background = Change_bg(sender, e, b_xx.b_00);
                 Pick(b_xx.b_00);
@@ -368,7 +361,6 @@ namespace MemoryGame
         {
             if (b_01.Background == Brushes.LightGray)
             {
-                if (start_game) Start();
                 keep_uncovered = false;
                 b_01.Background = Change_bg(sender, e, b_xx.b_01);
                 Pick(b_xx.b_01);
@@ -379,7 +371,6 @@ namespace MemoryGame
         {
             if (b_02.Background == Brushes.LightGray)
             {
-                if (start_game) Start();
                 keep_uncovered = false;
                 b_02.Background = Change_bg(sender, e, b_xx.b_02);
                 Pick(b_xx.b_02);
@@ -391,7 +382,6 @@ namespace MemoryGame
         {
             if (b_03.Background == Brushes.LightGray)
             {
-                if (start_game) Start();
                 keep_uncovered = false;
                 b_03.Background = Change_bg(sender, e, b_xx.b_03);
                 Pick(b_xx.b_03);
@@ -402,7 +392,6 @@ namespace MemoryGame
         {
             if (b_10.Background == Brushes.LightGray)
             {
-                if (start_game) Start();
                 keep_uncovered = false;
                 b_10.Background = Change_bg(sender, e, b_xx.b_10);
                 Pick(b_xx.b_10);
@@ -413,7 +402,6 @@ namespace MemoryGame
         {
             if (b_11.Background == Brushes.LightGray)
             {
-                if (start_game) Start();
                 keep_uncovered = false;
                 b_11.Background = Change_bg(sender, e, b_xx.b_11);
                 Pick(b_xx.b_11);
@@ -424,7 +412,6 @@ namespace MemoryGame
         {
             if (b_12.Background == Brushes.LightGray)
             {
-                if (start_game) Start();
                 keep_uncovered = false;
                 b_12.Background = Change_bg(sender, e, b_xx.b_12);
                 Pick(b_xx.b_12);
@@ -435,7 +422,6 @@ namespace MemoryGame
         {
             if (b_13.Background == Brushes.LightGray)
             {
-                if (start_game) Start();
                 keep_uncovered = false;
                 b_13.Background = Change_bg(sender, e, b_xx.b_13);
                 Pick(b_xx.b_13);
@@ -446,7 +432,6 @@ namespace MemoryGame
         {
             if (b_20.Background == Brushes.LightGray)
             {
-                if (start_game) Start();
                 keep_uncovered = false;
                 b_20.Background = Change_bg(sender, e, b_xx.b_20);
                 Pick(b_xx.b_20);
@@ -457,7 +442,6 @@ namespace MemoryGame
         {
             if (b_21.Background == Brushes.LightGray)
             {
-                if (start_game) Start();
                 keep_uncovered = false;
                 b_21.Background = Change_bg(sender, e, b_xx.b_21);
                 Pick(b_xx.b_21);
@@ -468,7 +452,6 @@ namespace MemoryGame
         {
             if (b_22.Background == Brushes.LightGray)
             {
-                if (start_game) Start();
                 keep_uncovered = false;
                 b_22.Background = Change_bg(sender, e, b_xx.b_22);
                 Pick(b_xx.b_22);
@@ -479,7 +462,6 @@ namespace MemoryGame
         {
             if (b_23.Background == Brushes.LightGray)
             {
-                if (start_game) Start();
                 keep_uncovered = false;
                 b_23.Background = Change_bg(sender, e, b_xx.b_23);
                 Pick(b_xx.b_23);
@@ -490,7 +472,6 @@ namespace MemoryGame
         {
             if (b_30.Background == Brushes.LightGray)
             {
-                if (start_game) Start();
                 keep_uncovered = false;
                 b_30.Background = Change_bg(sender, e, b_xx.b_30);
                 Pick(b_xx.b_30);
@@ -501,7 +482,6 @@ namespace MemoryGame
         {
             if (b_31.Background == Brushes.LightGray)
             {
-                if (start_game) Start();
                 keep_uncovered = false;
                 b_31.Background = Change_bg(sender, e, b_xx.b_31);
                 Pick(b_xx.b_31);
@@ -512,7 +492,6 @@ namespace MemoryGame
         {
             if (b_32.Background == Brushes.LightGray)
             {
-                if (start_game) Start();
                 keep_uncovered = false;
                 b_32.Background = Change_bg(sender, e, b_xx.b_32);
                 Pick(b_xx.b_32);
@@ -523,7 +502,6 @@ namespace MemoryGame
         {
             if (b_33.Background == Brushes.LightGray)
             {
-                if (start_game) Start();
                 keep_uncovered = false;
                 b_33.Background = Change_bg(sender, e, b_xx.b_33);
                 Pick(b_xx.b_33);
@@ -531,6 +509,7 @@ namespace MemoryGame
         }
         private void b_41_Click(object sender, RoutedEventArgs e)
         {
+            
             this.Close();
             Gameplay new_game = new Gameplay();
             new_game.ShowDialog();
