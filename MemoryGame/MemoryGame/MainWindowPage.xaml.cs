@@ -27,7 +27,7 @@ namespace MemoryGame
 
         private void highscoresButton_Click(object sender, RoutedEventArgs e)
         {
-            this.NavigationService.Navigate(new HighscoresPage());
+            this.NavigationService.Navigate(new HighscoresPage());      
         }
 
         private void infoButton_Click(object sender, RoutedEventArgs e)

@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Windows.Threading;
+using System.IO;
 
 namespace MemoryGame
 {
@@ -44,7 +45,7 @@ namespace MemoryGame
         enum b_xx { b_00, b_01, b_02, b_03, b_10, b_11, b_12, b_13, b_20, b_21, b_22, b_23, b_30, b_31, b_32, b_33, };
 
         int[] Buttons = new int[((int)b_xx.b_33)+1]; // array size is equal to number of fields (16)
-        
+                
         public Gameplay()
         {
             InitializeComponent();
@@ -520,6 +521,8 @@ namespace MemoryGame
         private void Save_click(object sender, RoutedEventArgs e)
         {
             name = Nickname.Text;
+            File.AppendAllText("highscores.txt", time + " " + name + Environment.NewLine);
+            Save.Visibility = Visibility.Collapsed;
         }
     }
 }

@@ -41,7 +41,7 @@
             <Button x:Name="b_41" Margin="40,5,40,72" Grid.Column="4" Grid.Row="1" Content="Reset Game" Click="b_41_Click"/>
             <Button Margin="40,58,40,19" Grid.Column="4" Grid.Row="1" Content="Close Game" Click="b_42_Click"/>
             <Label x:Name="WinningInformation" Grid.Column="4" Margin="10,15,10,5" Grid.Row="2" VerticalContentAlignment="Stretch" Height="92" HorizontalContentAlignment="Center" HorizontalAlignment="Center"/>
-            <TextBox x:Name="Nickname" Grid.Column="4" HorizontalAlignment="Center" Height="42" Margin="40,10,40,0" Grid.Row="3" TextWrapping="Wrap" Text="Your Nickname" VerticalAlignment="Top" Width="120" FontSize="14" Visibility="Collapsed"/>
+            <TextBox x:Name="Nickname" Grid.Column="4" HorizontalAlignment="Center" Height="42" Margin="40,10,40,0" Grid.Row="3" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontSize="14" Visibility="Collapsed"/>
             <Button x:Name="Save" Content="Save" Grid.Column="4" HorizontalAlignment="Left" Margin="40,70,0,0" Grid.Row="3" VerticalAlignment="Top" Width="120" Height="24" Visibility="Collapsed" Click="Save_click"/>
         </Grid>
     </Border>

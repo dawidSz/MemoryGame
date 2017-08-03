@@ -9,7 +9,7 @@
 
     <Grid>
         <Image Source="skyFALLpages.jpg" Stretch="Fill" Margin="0,-21,0,0"/>
-        <Button x:Name="highscores_backbutton" Content="Back !" HorizontalAlignment="Left" Margin="170,284,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.5,0.5" Click="highscores_backbutton_Click">
+        <Button x:Name="highscores_backbutton" Content="Back !" HorizontalAlignment="Left" Margin="189,345,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.5,0.5" Click="highscores_backbutton_Click">
             <Button.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -19,5 +19,7 @@
                 </TransformGroup>
             </Button.RenderTransform>
         </Button>
+        <Label x:Name="Scores" Content="Label" Foreground="#FFE0E0E0" HorizontalAlignment="Left" Height="257" Margin="10,54,0,0" VerticalAlignment="Top" Width="237"/>
+        <Label Content="Highscores" Foreground="#FFE0E0E0" HorizontalAlignment="Left" Height="39" Margin="10,10,0,0" VerticalAlignment="Top" Width="250" FontFamily="Showcard Gothic" FontSize="20" FontStyle="Italic"/>
     </Grid>
 </Page>
