@@ -1,17 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 using System.Windows.Threading;
 using System.IO;
 
@@ -99,114 +90,95 @@ namespace MemoryGame
             int f_cover = f_pick;
             int s_cover = s_pick;
 
-            int count_two = 0; // needs to cover two fields;
-
             int cover = f_cover; // first field
-            while(count_two < 2)
+            for(int count_two = 0; count_two < 2; count_two++)
             {
                 switch (Buttons[cover])
                 {
                     #region 16_cases
                     case (int)b_xx.b_00:
                         {
-                            b_00.Background = Brushes.LightGray;
-                            keep_uncovered = false;
+                            Covering(b_00);
                             break;
                         }
                     case (int)b_xx.b_01:
                         {
-                            b_01.Background = Brushes.LightGray;
-                            keep_uncovered = false;
+                            Covering(b_01);
                             break;
                         }
                     case (int)b_xx.b_02:
                         {
-                            b_02.Background = Brushes.LightGray;
-                            keep_uncovered = false;
+                            Covering(b_02);
                             break;
                         }
                     case (int)b_xx.b_03:
                         {
-                            b_03.Background = Brushes.LightGray;
-                            keep_uncovered = false;
+                            Covering(b_03);
                             break;
                         }
                     case (int)b_xx.b_10:
                         {
-                            b_10.Background = Brushes.LightGray;
-                            keep_uncovered = false;
+                            Covering(b_10);
                             break;
                         }
                     case (int)b_xx.b_11:
                         {
-                            b_11.Background = Brushes.LightGray;
-                            keep_uncovered = false;
+                            Covering(b_11);
                             break;
                         }
                     case (int)b_xx.b_12:
                         {
-                            b_12.Background = Brushes.LightGray;
-                            keep_uncovered = false;
+                            Covering(b_12);
                             break;
                         }
                     case (int)b_xx.b_13:
                         {
-                            b_13.Background = Brushes.LightGray;
-                            keep_uncovered = false;
+                            Covering(b_13);
                             break;
                         }
                     case (int)b_xx.b_20:
                         {
-                            b_20.Background = Brushes.LightGray;
-                            keep_uncovered = false;
+                            Covering(b_20);
                             break;
                         }
                     case (int)b_xx.b_21:
                         {
-                            b_21.Background = Brushes.LightGray;
-                            keep_uncovered = false;
+                            Covering(b_21);
                             break;
                         }
                     case (int)b_xx.b_22:
                         {
-                            b_22.Background = Brushes.LightGray;
-                            keep_uncovered = false;
+                            Covering(b_22);
                             break;
                         }
                     case (int)b_xx.b_23:
                         {
-                            b_23.Background = Brushes.LightGray;
-                            keep_uncovered = false;
+                            Covering(b_23);
                             break;
                         }
                     case (int)b_xx.b_30:
                         {
-                            b_30.Background = Brushes.LightGray;
-                            keep_uncovered = false;
+                            Covering(b_30);
                             break;
                         }
                     case (int)b_xx.b_31:
                         {
-                            b_31.Background = Brushes.LightGray;
-                            keep_uncovered = false;
+                            Covering(b_31);
                             break;
                         }
                     case (int)b_xx.b_32:
                         {
-                            b_32.Background = Brushes.LightGray;
-                            keep_uncovered = false;
+                            Covering(b_32);
                             break;
                         }
                     case (int)b_xx.b_33:
                         {
-                            b_33.Background = Brushes.LightGray;
-                            keep_uncovered = false;
+                            Covering(b_33);
                             break;
                         }
                     default: break;
 #endregion
                 }
-                count_two++;
                 cover = s_cover; // now second field
             }
 
@@ -217,13 +189,19 @@ namespace MemoryGame
             }
         }
 
-        private Brush Change_bg(object sender, RoutedEventArgs e, b_xx button)
+        private void Covering(Button button)
+        {
+            button.Background = Brushes.LightGray;
+            keep_uncovered = false;
+        }
+
+        private Brush Change_bg(object sender, RoutedEventArgs e, b_xx enum_button)
         {
             int background_type = 0;
 
             for (int i = (int)b_xx.b_00; i <= (int)b_xx.b_33; i++)
             {
-                if ((int)button == Buttons[i])
+                if ((int)enum_button == Buttons[i])
                 {
                     background_type = i;
                     break;
@@ -271,12 +249,12 @@ namespace MemoryGame
             }
         }
 
-        private void First_Pick(b_xx button)
+        private void First_Pick(b_xx enum_button)
         {
             first_pick = true;
             for (int i = (int)b_xx.b_00; i <= (int)b_xx.b_33; i++)
             {
-                if ((int)button == Buttons[i])
+                if ((int)enum_button == Buttons[i])
                 {
                     if (third_pick) t_pick = i;
                     else f_pick = i;
@@ -285,12 +263,12 @@ namespace MemoryGame
             }
         }
 
-        private void Second_Pick(b_xx button)
+        private void Second_Pick(b_xx enum_button)
         {
             second_pick = true;
             for (int i = (int)b_xx.b_00; i <= (int)b_xx.b_33; i++)
             {
-                if ((int)button == Buttons[i])
+                if ((int)enum_button == Buttons[i])
                 {
                     s_pick = i;
                     break;
@@ -303,7 +281,7 @@ namespace MemoryGame
         }
 
        
-        private void Check_Pair() // simple version
+        private void Check_Pair()
         {
             first_pick = false;
             second_pick = false;
@@ -316,13 +294,7 @@ namespace MemoryGame
                 {
                     sw.Stop();
                     dt.Stop();
-                    //MessageBoxResult result = MessageBox.Show("Your time is: "+time+"\nDo you want to save your score?",
-                    //    "YOU WON", MessageBoxButton.YesNo);
 
-                    //if (result == MessageBoxResult.Yes)
-                    //{
-
-                    //}
                     WinningInformation.Content = "Congratulations!\nYou won the game!" +
                         "\nEnter your nickname,\nif you want to save your score!";
                     Nickname.Visibility = Visibility.Visible;
@@ -331,17 +303,17 @@ namespace MemoryGame
             }
         }
 
-        private void Pick(b_xx button)
+        private void Pick(b_xx enum_button)
         {
             if (hold_covered == 0)
             {
-                if (!first_pick && !second_pick) First_Pick(button);
-                else if (first_pick && !second_pick) Second_Pick(button);
+                if (!first_pick && !second_pick) First_Pick(enum_button);
+                else if (first_pick && !second_pick) Second_Pick(enum_button);
             }
             else
             {
                 third_pick = true;
-                First_Pick(button); // third pick will become first pick of another move
+                First_Pick(enum_button); // third pick will become first pick of another move
             }
         }
 
@@ -352,182 +324,94 @@ namespace MemoryGame
             start_game = false;
         }
 
-#region Click_methods
+        #region Click_methods
+
+        private void Cilck(Button button, object sender, RoutedEventArgs e, b_xx enum_button)
+        {
+            if (start_game) Start();
+            keep_uncovered = false;
+            button.Background = Change_bg(sender, e, enum_button);
+            Pick(enum_button);
+        }
+
         private void b_00_Click(object sender, RoutedEventArgs e)
         {
-            if (b_00.Background == Brushes.LightGray)
-            {
-                if (start_game) Start();
-                keep_uncovered = false;
-                b_00.Background = Change_bg(sender, e, b_xx.b_00);
-                Pick(b_xx.b_00);
-            }
-        }   
+            if (b_00.Background == Brushes.LightGray)   Cilck(b_00, sender, e, b_xx.b_00);
+        }
 
         private void b_01_Click(object sender, RoutedEventArgs e)
         {
-            if (b_01.Background == Brushes.LightGray)
-            {
-                if (start_game) Start();
-                keep_uncovered = false;
-                b_01.Background = Change_bg(sender, e, b_xx.b_01);
-                Pick(b_xx.b_01);
-            }
+            if (b_01.Background == Brushes.LightGray)   Cilck(b_01, sender, e, b_xx.b_01);
         }
 
         private void b_02_Click(object sender, RoutedEventArgs e)
         {
-            if (b_02.Background == Brushes.LightGray)
-            {
-                if (start_game) Start();
-                keep_uncovered = false;
-                b_02.Background = Change_bg(sender, e, b_xx.b_02);
-                Pick(b_xx.b_02);
-                
-            }
+            if (b_02.Background == Brushes.LightGray)   Cilck(b_02, sender, e, b_xx.b_02);
         }
 
         private void b_03_Click(object sender, RoutedEventArgs e)
         {
-            if (b_03.Background == Brushes.LightGray)
-            {
-                if (start_game) Start();
-                keep_uncovered = false;
-                b_03.Background = Change_bg(sender, e, b_xx.b_03);
-                Pick(b_xx.b_03);
-            }
+            if (b_03.Background == Brushes.LightGray) Cilck(b_03, sender, e, b_xx.b_03);
         }
 
         private void b_10_Click(object sender, RoutedEventArgs e)
         {
-            if (b_10.Background == Brushes.LightGray)
-            {
-                if (start_game) Start();
-                keep_uncovered = false;
-                b_10.Background = Change_bg(sender, e, b_xx.b_10);
-                Pick(b_xx.b_10);
-            }
+            if (b_10.Background == Brushes.LightGray) Cilck(b_10, sender, e, b_xx.b_10);
         }
 
         private void b_11_Click(object sender, RoutedEventArgs e)
         {
-            if (b_11.Background == Brushes.LightGray)
-            {
-                if (start_game) Start();
-                keep_uncovered = false;
-                b_11.Background = Change_bg(sender, e, b_xx.b_11);
-                Pick(b_xx.b_11);
-            }
+            if (b_11.Background == Brushes.LightGray) Cilck(b_11, sender, e, b_xx.b_11);
         }
 
         private void b_12_Click(object sender, RoutedEventArgs e)
         {
-            if (b_12.Background == Brushes.LightGray)
-            {
-                if (start_game) Start();
-                keep_uncovered = false;
-                b_12.Background = Change_bg(sender, e, b_xx.b_12);
-                Pick(b_xx.b_12);
-            }
+            if (b_12.Background == Brushes.LightGray) Cilck(b_12, sender, e, b_xx.b_12);
         }
 
         private void b_13_Click(object sender, RoutedEventArgs e)
         {
-            if (b_13.Background == Brushes.LightGray)
-            {
-                if (start_game) Start();
-                keep_uncovered = false;
-                b_13.Background = Change_bg(sender, e, b_xx.b_13);
-                Pick(b_xx.b_13);
-            }
+            if (b_13.Background == Brushes.LightGray) Cilck(b_13, sender, e, b_xx.b_13);
         }
 
         private void b_20_Click(object sender, RoutedEventArgs e)
         {
-            if (b_20.Background == Brushes.LightGray)
-            {
-                if (start_game) Start();
-                keep_uncovered = false;
-                b_20.Background = Change_bg(sender, e, b_xx.b_20);
-                Pick(b_xx.b_20);
-            }
+            if (b_20.Background == Brushes.LightGray) Cilck(b_20, sender, e, b_xx.b_20);
         }
 
         private void b_21_Click(object sender, RoutedEventArgs e)
         {
-            if (b_21.Background == Brushes.LightGray)
-            {
-                if (start_game) Start();
-                keep_uncovered = false;
-                b_21.Background = Change_bg(sender, e, b_xx.b_21);
-                Pick(b_xx.b_21);
-            }
+            if (b_21.Background == Brushes.LightGray) Cilck(b_21, sender, e, b_xx.b_21);
         }
 
         private void b_22_Click(object sender, RoutedEventArgs e)
         {
-            if (b_22.Background == Brushes.LightGray)
-            {
-                if (start_game) Start();
-                keep_uncovered = false;
-                b_22.Background = Change_bg(sender, e, b_xx.b_22);
-                Pick(b_xx.b_22);
-            }
+            if (b_22.Background == Brushes.LightGray) Cilck(b_22, sender, e, b_xx.b_22);
         }
 
         private void b_23_Click(object sender, RoutedEventArgs e)
         {
-            if (b_23.Background == Brushes.LightGray)
-            {
-                if (start_game) Start();
-                keep_uncovered = false;
-                b_23.Background = Change_bg(sender, e, b_xx.b_23);
-                Pick(b_xx.b_23);
-            }
+            if (b_23.Background == Brushes.LightGray) Cilck(b_23, sender, e, b_xx.b_23);
         }
 
         private void b_30_Click(object sender, RoutedEventArgs e)
         {
-            if (b_30.Background == Brushes.LightGray)
-            {
-                if (start_game) Start();
-                keep_uncovered = false;
-                b_30.Background = Change_bg(sender, e, b_xx.b_30);
-                Pick(b_xx.b_30);
-            }
+            if (b_30.Background == Brushes.LightGray) Cilck(b_30, sender, e, b_xx.b_30);
         }
 
         private void b_31_Click(object sender, RoutedEventArgs e)
         {
-            if (b_31.Background == Brushes.LightGray)
-            {
-                if (start_game) Start();
-                keep_uncovered = false;
-                b_31.Background = Change_bg(sender, e, b_xx.b_31);
-                Pick(b_xx.b_31);
-            }
+            if (b_31.Background == Brushes.LightGray) Cilck(b_31, sender, e, b_xx.b_31);
         }
 
         private void b_32_Click(object sender, RoutedEventArgs e)
         {
-            if (b_32.Background == Brushes.LightGray)
-            {
-                if (start_game) Start();
-                keep_uncovered = false;
-                b_32.Background = Change_bg(sender, e, b_xx.b_32);
-                Pick(b_xx.b_32);
-            }
+            if (b_32.Background == Brushes.LightGray) Cilck(b_32, sender, e, b_xx.b_32);
         }
 
         private void b_33_Click(object sender, RoutedEventArgs e)
         {
-            if (b_33.Background == Brushes.LightGray)
-            {
-                if (start_game) Start();
-                keep_uncovered = false;
-                b_33.Background = Change_bg(sender, e, b_xx.b_33);
-                Pick(b_xx.b_33);
-            }
+            if (b_33.Background == Brushes.LightGray) Cilck(b_33, sender, e, b_xx.b_33);
         }
         private void b_41_Click(object sender, RoutedEventArgs e)
         {
